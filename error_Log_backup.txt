@@ -105,3 +105,8 @@
 2017-09-29_11:19:52 gold.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
 2017-09-29_11:19:52 platinum.cs.wisc.edu  : has no backup folder
 2017-09-29_11:19:52 diamond.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_11:58:22 bronze.cs.wisc.edu  : backup folder contained no files
+2017-09-29_11:58:22 silver.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_11:58:22 gold.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_11:58:22 platinum.cs.wisc.edu  : has no backup folder
+2017-09-29_11:58:22 diamond.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.

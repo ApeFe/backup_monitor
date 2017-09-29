@@ -129,7 +129,6 @@ do
     fi
     cur_series=$(echo $newest_match | awk -F"." '{print $1}' )
     first=$cur_series'.1.backup'
-    #echo 'first = ' $first
     size=$(stat -c %s $i/$first)
     if [ 0 -gt $size ]
     then
@@ -140,13 +139,24 @@ do
 
     ##get backup series number
     series_num=$(echo $newest_match | awk -F"." '{print $2}' )
-    #echo 'series num =' $series_num
     
+    ##check if all the previous in the series are there #TODO
     if [ $deep -eq 1 ]
     then
 	echo going deep
-    ##check if all the previous in the series are there #TODO
-    #for( )
+	let 'series_num--'
+	while [ $series_num -gt 1 ]
+	do
+	    first=$cur_series'.'$series_num'.backup'
+	    #echo 'first = ' $first
+	    size=$(stat -c %s $i/$first)
+	    if [ 0 -gt $size ]
+	    then
+		echo 'Error : '$first ', the first file in the series as no size'
+		echo $(date +"%Y-%m-%d_%T") $i ' : the backup '$first' has a size of 0 or less.' | tee -a $email_log >> $failLog
+		errors=1
+	    fi  
+	done
     #do
 	newest_match='' #TODO
 	size=$(stat -c %s $i/$newest_match)
@@ -160,8 +170,9 @@ done < "./hosts"
 #cat $email_log | mail -s "Backup ERROR" $backup_admin
 if [ $errors -eq 1 ]
 then
-    mail -s "Backup ERROR" dhayes@e115 < $email_log
+    mail -s "Backup ERROR" $backup_admin < $email_log
 fi
+
 rm $email_log
 
 exit 0
