@@ -81,7 +81,9 @@ do
     ##get file date of newest file
     file_date=$(date -r $i/$newest_match +%F) 
     #file_date=2014-10-22
-
+    #echo $file_date
+    #echo $date_h
+    
     ##check if that is todays date
     if [ ! $date_h = $file_date ]
     then
@@ -142,18 +144,11 @@ do
 		echo $(date +"%Y-%m-%d_%T") $i ' : the backup '$first' has a size of 0 or less.' | tee -a $email_log >> $failLog
 		errors=1
 	    fi  
-	done
-    #do
-	newest_match='' #TODO
-	size=$(stat -c %s $i/$newest_match)
-    #done
-    
-    host=$host"_"$date_h"."$series_num.backup
+	done  #deep work while loop
     fi
-done < "./hosts"
+done < "./hosts"  #main while loop
 
 ##send error report
-#cat $email_log | mail -s "Backup ERROR" $backup_admin
 if [ $errors -eq 1 ]
 then
     mail -s "Backup ERROR" $backup_admin < $email_log

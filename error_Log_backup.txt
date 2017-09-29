@@ -115,3 +115,31 @@
 2017-09-29_12:03:02 gold.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
 2017-09-29_12:03:02 platinum.cs.wisc.edu  : has no backup folder
 2017-09-29_12:03:02 diamond.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_12:04:34 bronze.cs.wisc.edu  : backup folder contained no files
+2017-09-29_12:04:34 silver.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_12:04:34 gold.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_12:04:34 platinum.cs.wisc.edu  : has no backup folder
+2017-09-29_12:04:34 diamond.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_12:06:11 bronze.cs.wisc.edu  : backup folder contained no files
+2017-09-29_12:06:11 silver.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_12:06:11 gold.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2017-09-29_12:06:11 platinum.cs.wisc.edu  : has no backup folder
+2017-09-29_12:06:11 diamond.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2014-10-21_07:00:00 bronze.cs.wisc.edu  : backup folder contained no files
+2014-10-21_07:00:00 silver.cs.wisc.edu  : backup was not run today, 2014-10-21, for host silver.cs.wisc.edu
+2014-10-21_07:00:00 silver.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2014-10-21_07:00:00 gold.cs.wisc.edu  : backup was not run today, 2014-10-21, for host gold.cs.wisc.edu
+2014-10-21_07:00:00 platinum.cs.wisc.edu  : has no backup folder
+2014-10-21_07:00:00 diamond.cs.wisc.edu  : backup was not run today, 2014-10-21, for host diamond.cs.wisc.edu
+2014-10-21_07:00:00 bronze.cs.wisc.edu  : backup folder contained no files
+2014-10-21_07:00:00 silver.cs.wisc.edu  : backup was not run today, 2014-10-21, for host silver.cs.wisc.edu
+2014-10-21_07:00:00 silver.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2014-10-21_07:00:00 gold.cs.wisc.edu  : backup was not run today, 2014-10-21, for host gold.cs.wisc.edu
+2014-10-21_07:00:00 platinum.cs.wisc.edu  : has no backup folder
+2014-10-21_07:00:00 diamond.cs.wisc.edu  : backup was not run today, 2014-10-21, for host diamond.cs.wisc.edu
+2014-10-20_07:00:00 bronze.cs.wisc.edu  : backup folder contained no files
+2014-10-20_07:00:00 silver.cs.wisc.edu  : backup was not run today, 2014-10-20, for host silver.cs.wisc.edu
+2014-10-20_07:00:00 silver.cs.wisc.edu  : backup run today is more than 2 weeks older than the first in the series.
+2014-10-20_07:00:00 gold.cs.wisc.edu  : backup was not run today, 2014-10-20, for host gold.cs.wisc.edu
+2014-10-20_07:00:00 platinum.cs.wisc.edu  : has no backup folder
+2014-10-20_07:00:00 diamond.cs.wisc.edu  : backup was not run today, 2014-10-20, for host diamond.cs.wisc.edu
