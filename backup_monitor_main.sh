@@ -19,7 +19,7 @@ then
     exit 9
 fi
 
-## Varsiables
+## Variables
 host='bob'
 series_num=1
 loop_num=1
@@ -34,6 +34,7 @@ email_log='temp_log.txt'
 backup_admin='dhayes@e115.chtc.wisc.edu'
 errors=0
 
+## Prep Email
 echo "Good Morning Backup Administrator," >> $email_log
 echo "The following errors were found during the backup check today "$date_h >> $email_log
 echo " " >> $email_log 
@@ -67,8 +68,6 @@ do
     ##get newest file matching the scheme
     host=$(echo $i | sed s=\\.=_=g )
     newest_match=$(ls -t $i/*$host* | head -1 | awk -F"/" '{print $2}') 
-    #echo 'host = ' $host
-    #echo 'newest match = '$newest_match
 
     ##check if there was a matching file 
     if [ -z "$(echo $newest_match | grep $host)" ] 
@@ -79,16 +78,11 @@ do
 	continue
     fi
 
-    #get file date of newest file
+    ##get file date of newest file
     file_date=$(date -r $i/$newest_match +%F) 
-    #echo 'stat -c %y '$i'/'$newest_match ' | grep awk'
-    #file_date=$(stat -c %y $i/$newest_match | awk '{print $1}')
-    #echo 'file date = '$file_date
     #file_date=2014-10-22
 
-    ##check if that is todays date #TODO
-    #echo 'the date is '$date_h 
-    #echo 'the file date is '$file_date
+    ##check if that is todays date
     if [ ! $date_h = $file_date ]
     then
 	echo 'Error : backup has not run for host '$i
@@ -96,22 +90,14 @@ do
 	errors=1
     fi
 
-    ##get date of file_group date #TODO
+    ##get date of file_group date
     file_group_date=$(echo $newest_match | awk -F"." '{print $1}' | awk -F"_" '{print $NF}')
-    #echo 'file group date = '$file_group_date
     file_group_date=$(date -d $file_group_date +%s)
-    #echo 'epoch file group date = ' $file_group_date
-    #echo 'date = ' $date_h
     date=$(date -d $date_h +%s)
-    #echo 'current date in epoc = ' $date
 
     ##check if file date < file_group_date +14
     two_weeks_ago=$(date -d @$((date - date14 )) +%s )
     
-    #echo 'date - date14 '$((date - date14))
-    #echo 'two weeks ago '$two_weeks_ago
-    #echo $two_weeks_ago
-    #echo $file_group_date
     if [ $two_weeks_ago -gt $file_group_date ]
     then
 	echo 'Error : current backup of '$i ' is more than 2 weeks old.'
@@ -176,5 +162,4 @@ fi
 rm $email_log
 
 exit 0
-#TODO finish deep work, maybe make it a function, uncomment the email string, look at RT as an
 # option, double check that it works for the different dates.
